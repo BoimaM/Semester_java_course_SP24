@@ -1,4 +1,4 @@
-package Chapter3;
+package chapter3;
 import java.util.Scanner;
 /*
 * So, you're going to create a program that asks the user to enter the quantities for the following coins.
