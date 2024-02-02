@@ -26,6 +26,7 @@ public class InOrder {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
+        // Input the three integer:
         System.out.println("First number: ");
         int num1 = scanner.nextInt();
         System.out.println("Second number: ");
@@ -35,9 +36,10 @@ public class InOrder {
 
         scanner.close();
 
-        //Prints the numbers onto one line to show the user.
+        //Prints the numbers onto one line to show the user:
         System.out.println("You entered: "+ num1 + ", " + num2 + " , and " + num3);
 
+        //Output results:
         if (num1 >= num2 && num2 >= num3 || num1 <= num2 && num2 <= num3){
             System.out.println("Those integers are in order.");
         }else{
