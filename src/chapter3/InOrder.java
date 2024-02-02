@@ -36,7 +36,7 @@ public class InOrder {
         scanner.close();
 
         //Prints the numbers onto one line to show the user.
-        System.out.println("You entered: " + num1 + " " + num2 + " " + num3);
+        System.out.println("You entered: "+ num1 + ", " + num2 + " , and " + num3);
 
         if (num1 >= num2 && num2 >= num3 || num1 <= num2 && num2 <= num3){
             System.out.println("Those integers are in order.");
