@@ -59,7 +59,6 @@ public class DaysInMonth {
                 break;
         }
         scanner.close();
-
-        System.out.println("Number of days in month:\n" +numoofdaysinmonth);
+            System.out.println("Number of days in month:\n" +numoofdaysinmonth);
     }
 }
