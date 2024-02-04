@@ -5,14 +5,6 @@ package chapter4;
  * Repeat this 4 additional times, for 5 rolls in total.
  * However, if the user gets to 20 before 5 rolls, end the game - they’ve won.
  * If they are greater than or less than 20 spaces exactly, they lose.
-
- * Example output:
-    Roll #1: You've rolled a 3. You are now on space 3 and have 17 more to go.
-    Roll #2: You've rolled a 3. You are now on space 6 and have 14 more to go.
-    Roll #3: You've rolled a 3. You are now on space 9 and have 11 more to go.
-    Roll #4: You've rolled a 5. You are now on space 14 and have 6 more to go.
-    Roll #5: You've rolled a 6. You're on space 20. Congrats, you win!
-*
  */
 import java.util.Random;
 public class Chapter4ChallengeProblem {
