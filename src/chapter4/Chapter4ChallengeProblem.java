@@ -15,42 +15,40 @@ package chapter4;
 *
  */
 import java.util.Random;
-import java.util.Scanner;
-
 public class Chapter4ChallengeProblem {
     public static void main(String[] args) {
         Random random =new Random();
-        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Roll the die. Let's begin the session!");
 
         //Initialize what we know:
         int winningSpace = 20;
         int maxRolls = 5;
         int currentSpace = 0;
-        boolean playAgain;
-
+        int total;
         //Create the game:
-        System.out.println("Welcome to the Roll the die.\nLet's begin the session!");
 
-       do {
-            for (int i = 0; i < maxRolls; i++){
-                int dice = random.nextInt(6) +1;
+            for (int i = 0; i < maxRolls; i++) {
+                int dice = random.nextInt(6) + 1;
                 currentSpace += dice; // increment by the dice amount rolled
 
                 // print what has occurred per iteration
-                int remainingSpace = winningSpace - currentSpace;
-                System.out.println("Roll #" + (i+1) + ": You've rolled a " + dice + ". You are on space " + currentSpace+ " and you have " + remainingSpace + " more to go." );
+                System.out.println("Roll #" + (i + 1) + ": You've rolled a " + dice );
             }
-           // Check if the user won or not
-           if (currentSpace == winningSpace){
-               System.out.println( "You won the game, congrats!");
-           }
-           else {
-               System.out.println("You lost the game!");
-           }
-           System.out.println("Would you like to play again? true or false");
-           playAgain = scanner.nextBoolean();
-        } while(playAgain);
+            total = currentSpace;
+            System.out.println("You're on space: "+ total);
 
-        scanner.close();
+            // Check if the user won or not
+           int overAmount = currentSpace - winningSpace;
+           int underAmount = winningSpace - currentSpace;
+
+           if (currentSpace == winningSpace){
+               System.out.println( "Congrats! You won the game.");
+           }
+           else if (currentSpace > winningSpace){
+               System.out.println("You lost the game, you were "+ overAmount +" number over the winning amount."  );
+           }else{
+               System.out.println("You lost the game, you were "+ underAmount +" number under the winning amount.");
+           }
     }
 }
