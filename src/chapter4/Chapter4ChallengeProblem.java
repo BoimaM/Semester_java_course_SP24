@@ -40,7 +40,7 @@ public class Chapter4ChallengeProblem {
                 int remainingSpace = winningSpace - currentSpace;
                 System.out.println("Roll #" + (i+1) + ": You've rolled a " + dice + ". You are on space " + currentSpace+ " and you have " + remainingSpace + " more to go." );
             }
-           // Check if the user won of not
+           // Check if the user won or not
            if (currentSpace == winningSpace){
                System.out.println( "You won the game, congrats!");
            }
