@@ -46,9 +46,9 @@ public class Chapter4ChallengeProblem {
                System.out.println( "Congrats! You won the game.");
            }
            else if (currentSpace > winningSpace){
-               System.out.println("You lost the game, you were "+ overAmount +" number over the winning amount."  );
+               System.out.println("You lost the game, you were "+ overAmount +" spots over the winning amount."  );
            }else{
-               System.out.println("You lost the game, you were "+ underAmount +" number under the winning amount.");
+               System.out.println("You lost the game, you were "+ underAmount +" spots under the winning amount.");
            }
     }
 }
