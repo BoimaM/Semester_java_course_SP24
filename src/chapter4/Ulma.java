@@ -29,13 +29,13 @@ public class Ulma {
         int num = scanner.nextInt();
         System.out.println ("The Ulam sequence is: ");
 
-        //Initial number from user:
+        //Print initial number from user:
         System.out.print(num);
 
         //Continue the loop until the num reaches 1 per instructions:
         while (num != 1) {
             if (num % 2 == 0) {
-                //If num is even, the next number is num/2
+                //IF num is even, the next number is num/2
                 num /= 2;
             }else{
                 //IF num is odd, the next number is 3 * num + 1
@@ -43,9 +43,7 @@ public class Ulma {
             }
 
             System.out.print(" -> " + num);
-
         }
-
         scanner.close();
     }
 }
