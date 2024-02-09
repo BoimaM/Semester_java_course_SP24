@@ -46,4 +46,5 @@ public class Ulma {
         }
         scanner.close();
     }
+
 }
