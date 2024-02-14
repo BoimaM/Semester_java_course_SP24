@@ -1,4 +1,5 @@
 package chapter6;
+//TOPIC = OBJECTS AS METHODS PARAMETERS AND RETURN TYPES:
 
 import java.util.Scanner;
 

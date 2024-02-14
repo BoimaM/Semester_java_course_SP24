@@ -1,4 +1,5 @@
 package chapter6;
+// TOPIC = CLASSES AND OBJECTS:
 
 public class Rectangle {
 // Encapsulation:
