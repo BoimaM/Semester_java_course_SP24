@@ -21,6 +21,8 @@ public class Rectangle {
         this.width = width; // Can be st this way with this way. Shows alt options (demo).
     }
 
+    //Getter and Setter Methods:
+
     public double getLength(){
         return length;
     }
