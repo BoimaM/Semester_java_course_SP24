@@ -4,6 +4,7 @@ public class PhoneBillCalculator {
 
    public static void main(String[] args){
 
+       //Print using constructor 1
        PhoneBillLogic bill1 = new PhoneBillLogic();
        bill1.id = 1;
        bill1.baseCost = 500;
