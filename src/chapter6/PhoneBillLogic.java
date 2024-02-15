@@ -103,13 +103,13 @@ public class PhoneBillLogic {
     }
 
     //Print Bill:
-
     public void itemizedBill(){
         System.out.println("ID: " + id);
         System.out.println("Base Rate: $" + baseCost);
         System.out.println("Overage Fee: $" + String.format("%.2f",calculateOverage()));
         System.out.println("Tax: $" + String.format("%.2f",calculateTax()));
         System.out.println("Total: $" + String.format("%.2f",calculateTotal()));
+        System.out.println();
     }
 }
 
