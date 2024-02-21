@@ -1,0 +1,34 @@
+package chapter4_looptypes;
+
+import java.util.Scanner;
+
+/*
+ * DO WHILE LOOP: Loop will run at least once before condition.
+ * Write a program that allows the user to enter two numbers,
+ * and then sums up the two numbers.The user should be able to
+ * repeat this action until they indicate they are done.
+ */
+public class AddNumbers {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+
+        boolean again;
+
+        do{
+            System.out.println("Enter the first number: ");
+            double num1 = scanner.nextDouble();
+
+            System.out.println("Enter the second number: ");
+            double num2 = scanner.nextDouble();
+
+            double sum = num1 + num2;
+            System.out.println("The sum is: "+ sum);
+
+            System.out.println("Would you like to start over? true or false");
+            again = scanner.nextBoolean();
+
+        } while(again);
+
+        scanner.close();
+    }
+}
