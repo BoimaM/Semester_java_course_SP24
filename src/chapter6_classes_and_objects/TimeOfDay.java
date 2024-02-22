@@ -15,8 +15,8 @@ public class TimeOfDay {
     // Setters:
    public void setHour(int hour){
        if(hour < 0 || hour > 23){
-        System.out.println("Invalid hour. Setting the hour to " + this.hour);
         this.hour = 0;
+        System.out.println("Invalid hour. Setting the hour to " + this.hour);
     }else{
            this.hour = hour;
        }
@@ -24,8 +24,8 @@ public class TimeOfDay {
 
     public void setMinute(int minute){
            if (minute < 0 || minute > 60){
-               System.out.println("Invalid minute. Setting minute to " + this.minute);
                this.minute = 0;
+               System.out.println("Invalid minute. Setting minute to " + this.minute);
            }else{
                this.minute = minute;
            }
@@ -38,11 +38,9 @@ public class TimeOfDay {
 
     // Method to add one minute
     public void addOneMinute(){
-        minute =(minute + 1) % 60;
-        if (minute == 0 && hour != 23){
+        minute = (minute + 1) % 60;
+        if (minute == 0) {
             addOneHour();// Increment the hour only
-        }else if (minute == 0 && hour == 23){
-            hour = 0;
         }
     }
 
