@@ -12,7 +12,7 @@ public class TimeOfDay {
        setMinute(minute);
     }
 
-    // Setters:
+    // Setters methods:
    public void setHour(int hour){
        if(hour < 0 || hour > 23){
         this.hour = 0;
@@ -31,7 +31,7 @@ public class TimeOfDay {
            }
        }
 
-    // Methods to add one hour
+    // Method to add one hour
     public void addOneHour(){
        hour = (hour + 1) % 24;
     }
