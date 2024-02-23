@@ -7,8 +7,7 @@ public class Person {
     private String gender;
 
 
-    public Person(){
-        System.out.println("In Person default constructor");
+    public Person(){;
     }
 
     public Person (String name){
