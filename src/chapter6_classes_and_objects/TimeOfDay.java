@@ -56,7 +56,7 @@ public class TimeOfDay {
     /*** Method to compute the time difference between two TimeOfDay objects
      * @param time1
      * @param time2
-     * @return new TimeOfDay object with differences
+     * @return new TimeOfDay object with time difference.
      */
     public TimeOfDay getTimeDiff(TimeOfDay time1, TimeOfDay time2){
 
