@@ -1,10 +1,13 @@
 package chapter6_classes_and_objects;
 
+import java.sql.Time;
+
 public class TestTimeOfDay {
 
     public static void main(String[] args){
-
+/*
         //Instantiate (create) a TimeOfDay class object called mytime.
+
         //Set mytime to 11:58 (hour = 11, minute = 58).I
         TimeOfDay mytime = new TimeOfDay(11,58);
 
@@ -40,7 +43,21 @@ public class TestTimeOfDay {
 
         //Display reset to 0
         System.out.println("Time: " + mytime.displayCurrentTime());
+*/
+        TimeOfDay now = new TimeOfDay(15,30);
+        TimeOfDay later = new TimeOfDay(20,45);
+        TimeOfDay interval = new TimeOfDay();
 
+        interval = interval.getTimeDiff(now, later);
+        System.out.println("Time difference: " + interval.displayCurrentTime());
+
+        now.setHour(6);
+        now.setMinute(5);
+
+        later.setHour(1);
+        later.setMinute(24);
+        interval.setTimeDiff(now,later);
+        System.out.println("Set time: " + interval.displayCurrentTime());
 
 
 

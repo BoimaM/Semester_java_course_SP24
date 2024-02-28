@@ -1,12 +1,21 @@
 package chapter6_classes_and_objects;
 
+import java.sql.Time;
+
 public class TimeOfDay {
 
     // Instance variables:
     private int hour;
     private int minute;
 
-    // Constructor type:
+
+    // Default Constructor:
+    TimeOfDay(){
+      hour = 0;
+      minute = 0;
+    }
+
+    // Parameterized Constructor:
     TimeOfDay(int hour, int minute){
        setHour(hour);
        setMinute(minute);
@@ -32,7 +41,7 @@ public class TimeOfDay {
        }
 
     // Method to add one hour
-    public void addOneHour(){
+    public void addOneHour()                                                                                                                                                                {
        hour = (hour + 1) % 24;
     }
 
@@ -42,6 +51,40 @@ public class TimeOfDay {
         if (minute == 0) {
             addOneHour();// Increment the hour only
         }
+    }
+
+    /*** Method to compute the time difference between two TimeOfDay objects
+     * @param time1
+     * @param time2
+     * @return new TimeOfDay object with differences
+     */
+    public TimeOfDay getTimeDiff(TimeOfDay time1, TimeOfDay time2){
+
+        //Takes each time and converts hours into mins and adds the total mins
+        int totalMin1 = time1.hour * 60 + time1.minute;
+        int totalMin2 = time2.hour * 60 + time2.minute;
+
+        //Takes the absolute value of the difference in minutes
+        int diffMins = Math.abs(totalMin2 - totalMin1);
+
+        //Converts the mins back into hours and the remaining is the mins.
+        int diffHours = diffMins / 60;
+        int remainMins = diffMins % 60;
+
+        //Returns a new time of day Object with the differences.
+        TimeOfDay difftime = new TimeOfDay(diffHours, remainMins);
+        return difftime;
+    }
+
+    /**
+     * Method to set the time difference between two TimeOfDay objects
+     * @param time1
+     * @param time2
+     */
+    public void setTimeDiff(TimeOfDay time1, TimeOfDay time2){
+        TimeOfDay diff = getTimeDiff(time1,time2);
+        this.hour = diff.hour;
+        this.minute = diff.minute;
     }
 
     //Display method: Formatting was looked up via Google
