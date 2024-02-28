@@ -72,8 +72,8 @@ public class TimeOfDay {
         int remainMins = diffMins % 60;
 
         //Returns a new time of day Object with the differences.
-        TimeOfDay difftime = new TimeOfDay(diffHours, remainMins);
-        return difftime;
+       return new TimeOfDay(diffHours, remainMins);
+
     }
 
     /**
@@ -87,11 +87,11 @@ public class TimeOfDay {
         this.minute = diff.minute;
     }
 
-    //Display method: Formatting was looked up via Google
+    //Display method
     public String displayCurrentTime(){
-        String formattedH = String.format("%02d",hour);
-        String formattedM = String.format("%02d",minute);
-        return formattedH + ":" + formattedM;
+        String formattedHour = String.format("%02d",hour);
+        String formattedMins = String.format("%02d",minute);
+        return formattedHour + ":" + formattedMins;
     }
 }
 
