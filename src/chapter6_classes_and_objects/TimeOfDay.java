@@ -1,7 +1,5 @@
 package chapter6_classes_and_objects;
 
-import java.sql.Time;
-
 public class TimeOfDay {
 
     // Instance variables:
