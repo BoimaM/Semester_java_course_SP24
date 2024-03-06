@@ -16,14 +16,12 @@ public class BankAccount {
         this.accountNumber = accountNumber;
     }
 
-
     //Getter and Setter:
     public String getAccountInfo(){
          int age = accountNumber.getAge();
          return "Customer Name: " + firstName + " " + lastname + "\n" +
                  "Birthday: " + birthDay + "\n" +
                  "Age: " + age;
-
     }
 
     public void setCustomerInfo(String fName, String lName, String bDay){
@@ -32,5 +30,4 @@ public class BankAccount {
         this.birthDay = bDay;
         accountNumber.setBirthDay(bDay);
     }
-
 }

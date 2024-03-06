@@ -44,13 +44,12 @@ public class AccountNumber {
         this.birthDay = birthDay;
     }
 
+    //Googled implementation:
     public int getAge() {
         //Get the current date
         LocalDate currentDate = LocalDate.now();
-
         //Parse the Birthday String to get the birthdate
        LocalDate birthDate = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("MM-dd-yyyy"));
-
         //Calculates the age
         int age = Period.between(birthDate,currentDate).getYears();
         return age;
