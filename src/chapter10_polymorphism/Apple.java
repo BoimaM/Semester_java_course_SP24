@@ -2,17 +2,17 @@ package chapter10_polymorphism;
 
 public class Apple extends Fruit{
 
-    public Apple(int calories){
-        super(calories); // Calls the constructor of the parent class
+    public Apple(){
+        setCalories(84);
     }
 
     @Override
     public void makeJuice() {
-        System.out.println("Apple juice was made.");
+        System.out.println("Apple juice was made, I hope you like it.");
     }
 
-    public void removeSeeds(int seeds){
-        System.out.println("Number of seeds removed: " + seeds);
+    public void removeSeeds(){
+        System.out.println("Seeds removed");
     }
 
 

@@ -2,15 +2,19 @@ package chapter10_polymorphism;
 
 public class Fruit {
 
-    public int calories;
+    private int calories;
 
-    public Fruit(int calories) {
-        this.calories = calories;
-        System.out.println("This has " + calories + " calories.");
+    public int getCalories() {
+        return calories;
     }
 
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
+
     public void makeJuice(){
-       System.out.println("Juice is made.\n");
+       System.out.println("Juice is made.");
    }
 
 }

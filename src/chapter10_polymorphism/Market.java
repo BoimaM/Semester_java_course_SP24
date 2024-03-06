@@ -4,28 +4,30 @@ public class Market {
 
     public static void main(String[] args) {
 
-        Apple apple1 = new Apple(3);
-        Banana banana1 = new Banana(23);
-
-        apple1.removeSeeds(6);
+        Fruit apple1 = new Apple();
+        ((Apple) apple1).removeSeeds(); //Casting calls
         apple1.makeJuice();
-        banana1.peelFruit();
-        banana1.makeJuice();
 
-        Fruit mango = new Banana(50);
-        mango.makeJuice();
-        drinkJuice(mango);
+        Apple apple2 =new Apple();
+        apple2.removeSeeds();
 
-        mango = new Apple(43);
-        ((Apple) mango).removeSeeds(1); // casting to access method of their instance.
+        Banana banana = new Banana();
+        banana.setCalories(90);
+        banana.peelFruit();
+
+        Fruit mango = new Fruit();
+        Fruit pear = new Fruit();
+        Fruit pineapple = new Fruit();
+
+        blend(apple1);
+        blend(banana);
+        blend(mango);
+        blend(pineapple);
+
     }
 
-    public static void drinkJuice(Fruit fruit){
-        if (fruit instanceof Apple){
-            System.out.println("Drinking the apple juice.");
-        }
-        else if (fruit instanceof Banana){
-            System.out.println("Drinking the banana juice.");
-        }
+    public static void blend(Fruit fruit){
+        System.out.println("Blending...");
+        fruit.makeJuice();
     }
 }
