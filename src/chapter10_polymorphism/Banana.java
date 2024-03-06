@@ -2,8 +2,8 @@ package chapter10_polymorphism;
 
 public class Banana extends Fruit {
 
-    public Banana(int calories, String fruit){
-        super(calories, fruit); // Calls the constructor of the parent class
+    public Banana(int calories){
+        super(calories); // Calls the constructor of the parent class
     }
 
     @Override
@@ -11,7 +11,7 @@ public class Banana extends Fruit {
         System.out.println("Banana juice was made. ");
     }
 
-    public void peelFruit(String fruit){
-        System.out.println(fruit + " has been peeled.");
+    public void peelFruit(){
+        System.out.println("Fruit has been peeled.");
     }
 }

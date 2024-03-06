@@ -4,9 +4,9 @@ public class Fruit {
 
     public int calories;
 
-    public Fruit(int calories, String fruit) {
+    public Fruit(int calories) {
         this.calories = calories;
-        System.out.println("This " + fruit + " has " + calories + " calories.");
+        System.out.println("This has " + calories + " calories.");
     }
 
     public void makeJuice(){
