@@ -3,7 +3,6 @@ package chapter6_classes_and_objects;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 
 public class AccountNumber {
 
