@@ -6,7 +6,6 @@ public class Apple extends Fruit{
         super(calories, fruit); // Calls the constructor of the parent class
     }
 
-
     @Override
     public void makeJuice() {
         System.out.println("Apple juice was made.");
