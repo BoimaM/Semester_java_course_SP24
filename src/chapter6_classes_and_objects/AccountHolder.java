@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
-public class AccountNumber {
+public class AccountHolder {
 
     //Instance variables:
     private String firstname;
@@ -12,7 +12,7 @@ public class AccountNumber {
     private String birthDay;
 
     //Constructor:
-    public AccountNumber(String fN, String lN, String bDay){
+    public AccountHolder(String fN, String lN, String bDay){
         this.firstname = fN;
         this.lastname =lN;
         this.birthDay =bDay;

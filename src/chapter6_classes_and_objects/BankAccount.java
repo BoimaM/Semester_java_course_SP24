@@ -6,19 +6,19 @@ public class BankAccount {
     private String firstName;
     private String lastname;
     private String birthDay;
-    private AccountNumber accountNumber;
+    private AccountHolder accountHolder;
 
     //Constructor:
-    public BankAccount(String fName, String lName, String bDay, AccountNumber accountNumber){
+    public BankAccount(String fName, String lName, String bDay, AccountHolder accountHolder){
         this.firstName = fName;
         this.lastname = lName;
         this.birthDay = bDay;
-        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
     }
 
     //Getter and Setter:
     public String getAccountInfo(){
-         int age = accountNumber.getAge();
+         int age = accountHolder.getAge();
          return "Customer Name: " + firstName + " " + lastname + "\n" +
                  "Birthday: " + birthDay + "\n" +
                  "Age: " + age;
@@ -28,6 +28,6 @@ public class BankAccount {
         this.firstName = fName;
         this.lastname = lName;
         this.birthDay = bDay;
-        accountNumber.setBirthDay(bDay);
+        accountHolder.setBirthDay(bDay);
     }
 }

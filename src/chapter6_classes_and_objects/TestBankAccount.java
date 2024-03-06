@@ -7,8 +7,8 @@ public class TestBankAccount {
 
         //Creation of Objects:
 
-        AccountNumber accountNumber = new AccountNumber("Mas", "Boima", "08-18-2000");
-        BankAccount bankAccount = new BankAccount("Mas", "Boima", "08-18-2000", accountNumber);
+        AccountHolder accountHolder = new AccountHolder("Mas", "Boima", "08-18-2000");
+        BankAccount bankAccount = new BankAccount("Mas", "Boima", "08-18-2000", accountHolder);
 
         //Test methods:
         System.out.println("Account information Displayed:");
