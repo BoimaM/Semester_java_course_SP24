@@ -6,19 +6,22 @@ import java.time.format.DateTimeFormatter;
 
 public class AccountHolder {
 
-    //Instance variables:
+    //Instance variable(s):
     private String firstname;
     private String lastname;
     private String birthDay;
 
-    //Constructor:
+    //Constructor(s):
     public AccountHolder(String fN, String lN, String bDay){
         this.firstname = fN;
-        this.lastname =lN;
-        this.birthDay =bDay;
+        this.lastname = lN;
+        this.birthDay = bDay;
     }
 
-    //Getters and Setters:
+    public AccountHolder(){
+    }
+
+    //Getter(s) and Setter(s):
     public String getFirstname() {
         return firstname;
     }
@@ -44,11 +47,11 @@ public class AccountHolder {
     }
 
     //Googled implementation:
-    public int getAge() {
+    public static int getAge(String birthDay) {
         //Get the current date
         LocalDate currentDate = LocalDate.now();
         //Parse the Birthday String to get the birthdate
-       LocalDate birthDate = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+        LocalDate birthDate = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("MM/dd/yyyy"));
         //Calculates the age
         int age = Period.between(birthDate,currentDate).getYears();
         return age;

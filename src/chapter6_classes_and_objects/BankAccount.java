@@ -2,32 +2,30 @@ package chapter6_classes_and_objects;
 
 public class BankAccount {
 
-    //Instance variables:
-    private String firstName;
-    private String lastname;
-    private String birthDay;
-    private AccountHolder accountHolder;
+    //Instance variable(s):
+    private int acctNum;
+    private double balance;
+    private AccountHolder customer;
 
-    //Constructor:
-    public BankAccount(String fName, String lName, String bDay, AccountHolder accountHolder){
-        this.firstName = fName;
-        this.lastname = lName;
-        this.birthDay = bDay;
-        this.accountHolder = accountHolder;
+    //Constructor(s):
+    public BankAccount(int acct, double bal, String firstname, String lastname, String birthday){
+        acctNum = acct;
+        balance = bal;
+        customer = new AccountHolder(firstname,lastname,birthday);
     }
 
-    //Getter and Setter:
-    public String getAccountInfo(){
-         int age = accountHolder.getAge();
-         return "Customer Name: " + firstName + " " + lastname + "\n" +
-                 "Birthday: " + birthDay + "\n" +
-                 "Age: " + age;
+    //Getter(s) and Setter(s):
+    public static String getAccountInfo(BankAccount account){
+         int age = AccountHolder.getAge(account.customer.getBirthDay());
+         return "Customer Name: " + account.customer.getFirstname() + " " + account.customer.getLastname() + "\n" +
+                 "Birthday: " + account.customer.getBirthDay() + "\n" +
+                 "Age: " + age + "\n" +
+                 "Account balance: " + account.balance;
     }
 
-    public void setCustomerInfo(String fName, String lName, String bDay){
-        this.firstName = fName;
-        this.lastname = lName;
-        this.birthDay = bDay;
-        accountHolder.setBirthDay(bDay);
+    public void setCustomerInfo(String fName, String lName,String bDay){
+            customer.setFirstname(fName);
+            customer.setLastname(lName);
+            customer.setBirthDay(bDay);
     }
 }

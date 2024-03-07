@@ -6,18 +6,15 @@ public class TestBankAccount {
 
 
         //Creation of Objects:
-
-        AccountHolder accountHolder = new AccountHolder("Mas", "Boima", "08-18-2000");
-        BankAccount bankAccount = new BankAccount("Mas", "Boima", "08-18-2000", accountHolder);
+        BankAccount myAccount = new BankAccount(1, 8000.00,"Joe","Chung","04/10/1968");
 
         //Test methods:
-        System.out.println("Account information Displayed:");
-        System.out.println(bankAccount.getAccountInfo());
-        System.out.println();
+        System.out.println(BankAccount.getAccountInfo(myAccount));
 
-        System.out.println("Information Change:");
-       bankAccount.setCustomerInfo("Rick","Paul","09-21-1977");
-        System.out.println(bankAccount.getAccountInfo());
+        myAccount.setCustomerInfo("Mas","Boima","08/18/2000");
+
+        System.out.println();
+        System.out.println(BankAccount.getAccountInfo(myAccount));
 
     }
 }
