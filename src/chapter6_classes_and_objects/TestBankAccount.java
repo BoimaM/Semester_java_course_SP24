@@ -10,9 +10,7 @@ public class TestBankAccount {
 
         //Test methods:
         System.out.println(BankAccount.getAccountInfo(myAccount));
-
         myAccount.setCustomerInfo("Mas","Boima","08/18/2000");
-
         System.out.println();
         System.out.println(BankAccount.getAccountInfo(myAccount));
 
