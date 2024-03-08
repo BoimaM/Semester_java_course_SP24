@@ -17,7 +17,8 @@ public class BankAccount {
     //Getter(s) and Setter(s):
     public static String getAccountInfo(BankAccount account){
          int age = AccountHolder.getAge(account.customer.getBirthDay());
-         return "Customer Name: " + account.customer.getFirstname() + " " + account.customer.getLastname() + "\n" +
+         return "Account number: " + account.acctNum +"\n" +
+                 "Customer Nam: " + account.customer.getFirstname() + " " + account.customer.getLastname() + "\n" +
                  "Birthday: " + account.customer.getBirthDay() + "\n" +
                  "Age: " + age + "\n" +
                  "Account balance: " + account.balance;
