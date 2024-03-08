@@ -46,7 +46,7 @@ public class AccountHolder {
         this.birthDay = birthDay;
     }
 
-    //Googled implementation:
+    //Method(s)
     public static int getAge(String birthDay) {
         //Get the current date
         LocalDate currentDate = LocalDate.now();
