@@ -15,13 +15,12 @@ public class BankAccount {
     }
 
     //Getter(s) and Setter(s):
-    public static String getAccountInfo(BankAccount account){
-         int age = AccountHolder.getAge(account.customer.getBirthDay());
-         return "Account Number: " + account.acctNum +"\n" +
-                 "Customer Name: " + account.customer.getFirstname() + " " + account.customer.getLastname() + "\n" +
-                 "Birthday: " + account.customer.getBirthDay() + "\n" +
-                 "Age: " + age + "\n" +
-                 "Account Balance: " + account.balance;
+    public String getAccountInfo(){
+         return "Account Number: " + acctNum +"\n" +
+                 "Customer Name: " + customer.getFirstname() + " " + customer.getLastname() + "\n" +
+                 "Birthday: " + customer.getBirthDay() + "\n" +
+                 "Age: " + customer.getAge(customer.getBirthDay())+ "\n" +
+                 "Account Balance: " + balance;
     }
 
     public void setCustomerInfo(String fName, String lName,String bDay){

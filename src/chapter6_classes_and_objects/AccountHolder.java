@@ -47,7 +47,7 @@ public class AccountHolder {
     }
 
     //Method(s)
-    public static int getAge(String birthDay) {
+      int getAge(String birthDay) {
         //Get the current date
         LocalDate currentDate = LocalDate.now();
         //Parse the Birthday String to get the birthdate
