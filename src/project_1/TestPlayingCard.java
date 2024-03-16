@@ -8,14 +8,14 @@ public class TestPlayingCard {
     public static void main(String[] args) {
 
         //Construct an array of 52 PlayingCard objects called deck.
+        // Array holds capacity == 52 cards
         PlayingCard[] deck = new PlayingCard[52];
 
         //Construct the 52 PlayingCards in a standard deck of cards
-        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
         int index = 0;
         for (int suit = 1; suit <= 4; suit++) {
-            for (int value = 1; value <= 13; value++) {
-                deck[index] = new PlayingCard(value, suit);
+            for (int cardVal = 1; cardVal <= 13; cardVal++) {
+                deck[index] = new PlayingCard(cardVal, suit);
                 index++;
             }
         }
@@ -23,5 +23,7 @@ public class TestPlayingCard {
         for (int i = 0; i < deck.length; i++) {
             System.out.println(deck[i]);
         }
+        //Prints deck amount to ensure there's 52 cards:
+        System.out.println("Deck amount: " + deck.length);
     }
 }
