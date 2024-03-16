@@ -11,7 +11,7 @@ public class TestPlayingCard {
         // Array holds capacity == 52 cards
         PlayingCard[] deck = new PlayingCard[52];
 
-        //Construct the 52 PlayingCards in a standard deck of cards
+        //Lopp over the 52 PlayingCards in a standard deck of cards
         int index = 0;
         for (int suit = 1; suit <= 4; suit++) {
             for (int cardVal = 1; cardVal <= 13; cardVal++) {

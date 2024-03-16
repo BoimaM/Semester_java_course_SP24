@@ -15,15 +15,14 @@ public class TestPlayingCardArrayList {
             }
         }
         //Display the value and suit of every PlayingCard in the deck
-        for (int i = 0;  i < deck.size(); i++){
-            System.out.println(deck.get(i));
-        }
+        System.out.println(deck);
+
         //Prints the deck amount just be make sure there's 52 cards:
         System.out.println("Deck amount: " + deck.size());
 
         //Shuffle the deck & print
         Collections.shuffle(deck);
-        System.out.println(deck);
+        System.out.println("Shuffled Deck: " + deck);
     }
 }
 
