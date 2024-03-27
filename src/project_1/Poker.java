@@ -132,4 +132,24 @@ public class Poker extends CardGame {
     }
     return false;
     }
+
+    /**
+     * Detect a Straight Flush
+     */
+    public boolean hasStraightFlush(PlayingCard[]hand){
+        return hasStraight(hand) && hasFlush(hand);
+    }
+
+    /**
+     * Detect Royal Flush
+     */
+    public boolean hasRoyalFlush(PlayingCard[]hand){
+        if (hasStraightFlush(hand)) {
+            Arrays.sort(hand);
+            if (hand[0].getValue() == 10 && hand[1].getValue() == 11 && hand[2].getValue() == 12 && hand[3].getValue() == 13 && hand[4].getValue() == 14) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
