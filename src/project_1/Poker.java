@@ -119,16 +119,16 @@ public class Poker extends CardGame {
     public boolean hasStraight(PlayingCard[] hand) {
     Arrays.sort(hand);
 
-    int count=1;
+    int count = 1;
 
     for (int i = 0; i < hand.length - 1; i++){
-        if (hand[i + 1].getValue() - hand[i].getValue() == 1){
+        if (hand[i + 1].getValue() - hand[i].getValue() == 1 ||
+         (hand[i].getValue() == 1 && hand[ i +1].getValue() == 10))
             count++;
-            if (count == 5){
-                return true;
+        if (count == 5){
+            return true;
             }
         }
-    }
     return false;
     }
 
