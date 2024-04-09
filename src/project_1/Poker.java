@@ -120,14 +120,13 @@ public class Poker extends CardGame {
     Arrays.sort(hand);
 
     int count=1;
+
     for (int i = 0; i < hand.length - 1; i++){
-        if (hand[i+1].getValue() - hand[i].getValue() == 1){
+        if (hand[i + 1].getValue() - hand[i].getValue() == 1){
             count++;
             if (count == 5){
                 return true;
             }
-        }else if (hand[i + 1].getValue() != hand[i].getValue()){
-            count = 1;
         }
     }
     return false;
@@ -146,7 +145,7 @@ public class Poker extends CardGame {
     public boolean hasRoyalFlush(PlayingCard[]hand){
         if (hasStraightFlush(hand)) {
             Arrays.sort(hand);
-            if (hand[0].getValue() == 10 && hand[1].getValue() == 11 && hand[2].getValue() == 12 && hand[3].getValue() == 13 && hand[4].getValue() == 14) {
+            if (hand[0].getValue() == 10 && hand[1].getValue() == 11 && hand[2].getValue() == 12 && hand[3].getValue() == 13 && hand[4].getValue() == 1) {
                 return true;
             }
         }

@@ -60,14 +60,19 @@ public class CardGame {
     /***
      * Get PlayingCards from start (top) of the deck
      * @param  numberOfCards The number of cards to draw
-     * @return card
+     * @return Array of Playing cards
      */
-    // had to change the method name bc of java problem
-    public PlayingCard drawMulti(int numberOfCards) {
-        if (numberOfCards <= 0 || numberOfCards > deck.size()){
+    public PlayingCard[] draw(int numberOfCards) {
+        if (numberOfCards <= 0 || numberOfCards > deck.size()) {
             return null;
         }
-        return deck.removeFirst();
+
+        PlayingCard [] drawnCards = new PlayingCard[numberOfCards];
+
+        for (int i = 0; i < numberOfCards; i++){
+            drawnCards[i] = deck.removeFirst();
+        }
+        return drawnCards;
     }
 
     /***
@@ -75,7 +80,7 @@ public class CardGame {
      * @param index card index
      * @return card at index
      */
-    public PlayingCard draw(int index){
+    public PlayingCard drawIndex(int index){
         if (index < 0 || index > deck.size()){
             return null;
         }
