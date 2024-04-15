@@ -3,7 +3,7 @@ package project_1;
 //Name: Masfort Boima
 // Defines a playing card that is used to play card games like Poker or Blackjack.
 
-public class PlayingCard {
+public class PlayingCard implements Comparable<PlayingCard> {
 
     //Instance variables and constants
     private int _value; //Value ranges from 1-13
@@ -66,5 +66,8 @@ public class PlayingCard {
          return value + " of " + _suit;
      }
 
-
+    @Override
+    public int compareTo(PlayingCard otherCard) {
+        return this.getValue() - otherCard.getValue();
+    }
 }

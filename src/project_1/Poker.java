@@ -21,9 +21,17 @@ public class Poker extends CardGame {
     public int getPairs(PlayingCard[] hand) {
         Arrays.sort(hand); //Sort the hand
         int pairCount = 0;
+        boolean threeOfAKind = hasThreeOfAKind(hand);
+        boolean fourOfAKind = hasFourOfAKind(hand);
+
         for (int i = 0; i < hand.length - 1; i++) {
             if (hand[i].getValue() == hand[i + 1].getValue()) {
+                if ((i + 2 < hand.length && hand[i].getValue() == hand[i + 2].getValue()) || // Three of a kind
+                        (i + 3 < hand.length && hand[i].getValue() == hand[i + 3].getValue())) { // Four of a kind
+                    continue;
+                }
                 pairCount++;
+                i++;
             }
         }
         if (pairCount == 0) {
@@ -55,20 +63,13 @@ public class Poker extends CardGame {
      * two cards of another - pairs
      */
     public boolean hasFullHouse(PlayingCard[] hand) {
-        Arrays.sort(hand);
 
-        boolean threeOfAKind = false;
-        boolean pair = false;
+        //check for three of a kind
+        boolean threeOfAKind = hasThreeOfAKind(hand);
 
-        //Check for three of a kind:
-        for (int i = 0; i < hand.length - 2; i++) {
-            if (hand[i].getValue() == hand[i + 1].getValue()
-                    && hand[i].getValue() == hand[i + 2].getValue()) {
-                threeOfAKind = true; // Found three of a kind
-                break;
-            }
-        }
         //Check for pair:
+        Arrays.sort(hand);
+        boolean pair = false;
         for (int i = 0; i < hand.length - 1; i++) {
             if (hand[i].getValue() == hand[i + 1].getValue()) {
                 pair = true;
@@ -118,6 +119,15 @@ public class Poker extends CardGame {
      */
     public boolean hasStraight(PlayingCard[] hand) {
     Arrays.sort(hand);
+
+    //Check for special-case high ace straight
+    if (hand[0].getValue() == 1 &&
+      hand[1].getValue() == 10 &&
+      hand[2].getValue() == 11 &&
+      hand[3].getValue() == 12 &&
+      hand[4].getValue() == 13){
+        return true;
+    }
 
     int count = 1;
 

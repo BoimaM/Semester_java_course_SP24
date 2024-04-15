@@ -54,7 +54,7 @@ public class CardGame {
      * @return The card drawn
      */
     public PlayingCard draw(){
-        return deck.removeFirst();
+        return deck.remove(0);
     }
 
     /***
@@ -70,7 +70,7 @@ public class CardGame {
         PlayingCard [] drawnCards = new PlayingCard[numberOfCards];
 
         for (int i = 0; i < numberOfCards; i++){
-            drawnCards[i] = deck.removeFirst();
+            drawnCards[i] = deck.remove(0);
         }
         return drawnCards;
     }
