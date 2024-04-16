@@ -63,19 +63,11 @@ public class Poker extends CardGame {
      * two cards of another - pairs
      */
     public boolean hasFullHouse(PlayingCard[] hand) {
-
         //check for three of a kind
         boolean threeOfAKind = hasThreeOfAKind(hand);
-
         //Check for pair:
-        Arrays.sort(hand);
-        boolean pair = false;
-        for (int i = 0; i < hand.length - 1; i++) {
-            if (hand[i].getValue() == hand[i + 1].getValue()) {
-                pair = true;
-                break;
-            }
-        }
+        boolean pair = getPairs(hand) == 1;
+
         return threeOfAKind && pair;
     }
 
