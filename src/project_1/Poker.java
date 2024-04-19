@@ -51,7 +51,10 @@ public class Poker extends CardGame {
         for (int i = 0; i < hand.length - 2; i++) {
             if (hand[i].getValue() == hand[i + 1].getValue() &&
                     hand[i].getValue() == hand[i + 2].getValue()) {
-                return true; // Found three of a kind
+                // Check if there are no additional cards of the same rank
+                if (i + 3 >= hand.length || hand[i].getValue() != hand[i + 3].getValue()) {
+                    return true; // Found three of a kind
+                }
             }
         }
         return false; // Not three of a kind is found.
@@ -147,7 +150,9 @@ public class Poker extends CardGame {
     public boolean hasRoyalFlush(PlayingCard[]hand){
         if (hasStraightFlush(hand)) {
             Arrays.sort(hand);
-            if (hand[0].getValue() == 10 && hand[1].getValue() == 11 && hand[2].getValue() == 12 && hand[3].getValue() == 13 && hand[4].getValue() == 1) {
+            if (hand[0].getValue() == 1 && hand[1].getValue() == 10 &&
+                hand[2].getValue() == 11 && hand[3].getValue() == 12 &&
+                hand[4].getValue() == 13) {
                 return true;
             }
         }
