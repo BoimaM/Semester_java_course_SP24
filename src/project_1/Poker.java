@@ -69,9 +69,9 @@ public class Poker extends CardGame {
         //check for three of a kind
         boolean threeOfAKind = hasThreeOfAKind(hand);
         //Check for pair:
-        boolean pair = getPairs(hand) == 1;
+        int pairCount = getPairs(hand);
 
-        return threeOfAKind && pair;
+        return threeOfAKind && pairCount == 1;
     }
 
     /**
