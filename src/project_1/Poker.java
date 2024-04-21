@@ -27,13 +27,13 @@ public class Poker extends CardGame {
         for (int i = 0; i < hand.length - 1; i++) {
             if (hand[i].getValue() == hand[i + 1].getValue()) {
                 if (!(threeOfAKind && hand[i].getValue() == hand[i + 1].getValue()) &&
-                    !(fourOfAKind && hand[i].getValue() == hand[i + 1].getValue())) {
+                        !(fourOfAKind && hand[i].getValue() == hand[i + 1].getValue())) {
                     pairCount++;
-                   i++;
+                    i++;
                 }
             }
         }
-        if (pairCount == 0) {
+         if (pairCount == 0) {
             return 0; // no pairs
         } else if (pairCount == 1) {
             return 1; // one pair
