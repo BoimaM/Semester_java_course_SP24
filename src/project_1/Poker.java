@@ -19,21 +19,33 @@ public class Poker extends CardGame {
      * Return the number of pairs: 0 = no pairs, 1 = one pair, 2 = two pairs
      */
     public int getPairs(PlayingCard[] hand) {
-        Arrays.sort(hand); //Sort the hand
+        Arrays.sort(hand); // Sort the hand
         int pairCount = 0;
+
+        // Detect Full House
+        boolean fullHouse = hasFullHouse(hand);
+        if (fullHouse) {
+            return 0; // Full House overrides pairs
+        }
+
+        // Detect three of a kind and four of a kind
         boolean threeOfAKind = hasThreeOfAKind(hand);
         boolean fourOfAKind = hasFourOfAKind(hand);
 
+        // Count pairs
         for (int i = 0; i < hand.length - 1; i++) {
             if (hand[i].getValue() == hand[i + 1].getValue()) {
+                // If the pair is not part of a three of a kind or four of a kind, count it
                 if (!(threeOfAKind && hand[i].getValue() == hand[i + 1].getValue()) &&
                         !(fourOfAKind && hand[i].getValue() == hand[i + 1].getValue())) {
                     pairCount++;
-                    i++;
+                    i++; // Skip the next card as it has already been used in the pair
                 }
             }
         }
-         if (pairCount == 0) {
+
+        // Determine the number of pairs
+        if (pairCount == 0) {
             return 0; // no pairs
         } else if (pairCount == 1) {
             return 1; // one pair
@@ -65,12 +77,27 @@ public class Poker extends CardGame {
      * two cards of another - pairs
      */
     public boolean hasFullHouse(PlayingCard[] hand) {
-        //check for three of a kind
-        boolean threeOfAKind = hasThreeOfAKind(hand);
-        //Check for pair:
-        int pairCount = getPairs(hand);
+        Arrays.sort(hand);
 
-        return threeOfAKind && pairCount == 1;
+        // Check for three of a kind
+        boolean threeOfAKind = hasThreeOfAKind(hand);
+        if(!threeOfAKind){
+            return false;
+        }
+
+        // Check for pair
+       int pairCount = 0;
+        Arrays.sort(hand);
+        for (int i = 0; i < hand.length - 1; i++) {
+            if (hand[i].getValue() == hand[i + 1].getValue()) {
+                if (hand[i].getValue() == hand[i + 1].getValue()) {
+                    pairCount++;
+                    i++;
+                }
+            }
+        }
+
+        return pairCount == 1 ;
     }
 
     /**

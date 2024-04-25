@@ -39,7 +39,14 @@ public class TestGetPairs {
                         new PlayingCard(4, 2),
                         new PlayingCard(4, 1),
                         new PlayingCard(4, 4),
-                        new PlayingCard(4, 3)}
+                        new PlayingCard(4, 3)},
+
+                // Full House
+                {       new PlayingCard(2, 4),
+                        new PlayingCard(2, 1),
+                        new PlayingCard(2, 3),
+                        new PlayingCard(4, 4),
+                        new PlayingCard(4, 2)}
         };
 
         // Test the getPairs() method for each test hand
