@@ -20,39 +20,26 @@ public class Poker extends CardGame {
      */
     public int getPairs(PlayingCard[] hand) {
         Arrays.sort(hand); // Sort the hand
-        int pairCount = 0;
+        int totalPairs = 0;
 
-        // Detect Full House
-        boolean fullHouse = hasFullHouse(hand);
-        if (fullHouse) {
-            return 0; // Full House overrides pairs
-        }
+        for (int value = 1; value <= 13; value++) {
+            int sameValCount = 0;
 
-        // Detect three of a kind and four of a kind
-        boolean threeOfAKind = hasThreeOfAKind(hand);
-        boolean fourOfAKind = hasFourOfAKind(hand);
-
-        // Count pairs
-        for (int i = 0; i < hand.length - 1; i++) {
-            if (hand[i].getValue() == hand[i + 1].getValue()) {
-                // If the pair is not part of a three of a kind or four of a kind, count it
-                if (!(threeOfAKind && hand[i].getValue() == hand[i + 1].getValue()) &&
-                        !(fourOfAKind && hand[i].getValue() == hand[i + 1].getValue())) {
-                    pairCount++;
-                    i++; // Skip the next card as it has already been used in the pair
+            for (int i = 0; i < hand.length; i++) {
+                if (hand[i].getValue() == value) {
+                    sameValCount++;
                 }
             }
-        }
 
-        // Determine the number of pairs
-        if (pairCount == 0) {
-            return 0; // no pairs
-        } else if (pairCount == 1) {
-            return 1; // one pair
-        } else {
-            return 2; // two pairs
+            if (sameValCount == 2) {
+                totalPairs++;
+            }
         }
+        // Return the total number of pairs
+        return totalPairs;
     }
+
+
 
     /**
      * Detect three of a kind.
@@ -79,26 +66,22 @@ public class Poker extends CardGame {
     public boolean hasFullHouse(PlayingCard[] hand) {
         Arrays.sort(hand);
 
-        // Check for three of a kind
-        boolean threeOfAKind = hasThreeOfAKind(hand);
-        if(!threeOfAKind){
-            return false;
-        }
+        boolean hasThreeOfAKind = false;
+        boolean hasPair = false;
 
-        // Check for pair
-       int pairCount = 0;
-        Arrays.sort(hand);
-        for (int i = 0; i < hand.length - 1; i++) {
-            if (hand[i].getValue() == hand[i + 1].getValue()) {
-                if (hand[i].getValue() == hand[i + 1].getValue()) {
-                    pairCount++;
-                    i++;
-                }
+        // Check for three of a kind and a pair
+        for (int i = 0; i < hand.length - 2; i++) {
+            if (hand[i].getValue() == hand[i + 1].getValue() &&
+                    hand[i].getValue() == hand[i + 2].getValue()) {
+                hasThreeOfAKind = true;
+            } else if (i < hand.length - 1 && hand[i].getValue() == hand[i + 1].getValue()) {
+                hasPair = true;
             }
         }
 
-        return pairCount == 1 ;
+        return hasThreeOfAKind && hasPair;
     }
+
 
     /**
      * Detect four of a kind
