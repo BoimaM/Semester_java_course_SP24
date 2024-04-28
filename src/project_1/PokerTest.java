@@ -23,7 +23,7 @@ public class PokerTest {
         };
         Poker poker = new Poker();
         int pairs = poker.getPairs(hand);
-        System.out.println("Pairs: " + pairs); // Expected output: 2
+        System.out.println("Pairs: " + pairs); // Expected output: 2 pairs
     }
 
     public void testHasThreeOfAKind() {
